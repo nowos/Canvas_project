@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <title>Canvas_project</title>
         <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
         <div class="wrapper">
             <div class="head">
-                <h1>Load and change your picture</h1>
+                <h1>Change Vader</h1>
             </div>
             <canvas id="c">
 
@@ -21,7 +21,13 @@
 
             <div class="menu">
                 <h1>Menu</h1>
-                <div class="option1"> 
+                <div class="option">
+                    <button class="bt_1" onclick="top_text()">set top text</button>
+                    <input type="text" id="text1" name="text1" value=""/>
+                </div>
+                <div class="option">
+                    <button class="bt_1" onclick="bottom_text()">set bottom text</button>
+                    <input type="text" id="text2" name="text1" value=""/>
                 </div>
 
             </div> 
@@ -29,33 +35,49 @@
 
             <div class="buttons">
 
-                <img id="i" src="" alt="image"/>
-
-
-                <button id="load" onclick="myCanvas()">Load</button>
-
+                <div class="label_bg"><p>get new background:</p></div>
                 <input type='file' id='getval' name="background-image" onchange="readURL(event)" />
+            </div>
+                <script>
+
+                    var c = document.getElementById("c");
+                    var ctx = c.getContext("2d");
+
+                    var image = new Image();
+                    image.onload = function () {
+                        console.log("loaded image");
+                        ctx.drawImage(image, 15, 15, c.width - '20', c.height - '30');
+                    };
+
+                    image.src = "vader.ico";
+
+                </script> 
 
                 <script>
+                    var top_text = function () {
+                        ctx.fillStyle = "black";
+                        ctx.font = "italic 18px Arial";
+                        ctx.fillText($('#text1').val(), 50, 20);
+                    };
+                </script>
+
+                <script>
+                    var bottom_text = function () {
+                        ctx.fillStyle = "black";
+                        ctx.font = "italic 18px Arial";
+                        ctx.fillText($('#text2').val(), 50, 140);
+                    };
+                </script>
+
+                <script>
+
                     function readURL(event) {
                         var getImagePath = URL.createObjectURL(event.target.files[0]);
-                        $('#i').css('content', 'url(' + getImagePath + ')');
+                        $('#c').css('background-image', 'url(' + getImagePath + ')');
                     }
-                </script>
-
-                <script>
-
-                    function myCanvas() {
-                        var c = document.getElementById("c");
-                        var ctx = c.getContext("2d");
-                        var img = document.getElementById("i");
-                        ctx.drawImage(img, 10, 10, 200, 150);
-                    }
-
 
                 </script>
 
-            </div>
 
         </div> <!--End of Wrapper-->
 
