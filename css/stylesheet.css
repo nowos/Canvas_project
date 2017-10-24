@@ -1,7 +1,8 @@
 .head{
 }
 .head > h1{
-    font-size: 20px;
+    font-size: 22px;
+    font-family: Arial; 
     color: #3333ff;
     text-align: center;
     padding-top: 20px; 
@@ -31,12 +32,35 @@
     background-color:#cccccc; 
 }
 .menu > h1{
-    font-size: 15px;
+    font-size: 20px;
     color:#000033; 
     text-align: center;
 }
-.option1{
 
+.option{
+
+}
+.bt_1{
+    margin-left: 25px; 
+    font-size: 18px; 
+    margin-bottom: 20px; 
+    margin-top: 30px;
+
+}
+#text1{
+    margin-left:25px;
+    width: 150px;
+    padding: 0px;
+    margin-top: 0px; 
+    height: 20px;
+}
+#text2{
+    margin-left:25px;
+    margin-top: 30px; 
+    width: 150px;
+    padding: 0px;
+    margin-top: 0px; 
+    height: 20px;
 }
 .buttons{
     width: 300px;
@@ -44,25 +68,23 @@
     float: left;
     margin-left: 30px; 
     margin-top: 20px; 
+    background-color:#cccccc;
 }
-#load{
-    height: 30px;
-    width: 60px;
-    margin-top: 25px;
-    margin-left: 30px;
-    float:left;
+
+.label_bg{
+    margin-left: 40px;
 }
-#save{
-    height: 30px;
-    width: 60px;
-    margin-left: 10px;
+.label_bg > p{
+    font-size: 18px; 
+    margin:0px;
+    padding: 0px;
+    width: 170px; 
+    height: 30px; 
+    text-align: center;
+    font-family: Arial;
+    padding-top: 10px; 
 }
-#i{
-    float: left;
-    height: 70px;
-    width: 70px; 
-}
-#getval{
-    margin-top:10px;
+.getval{
+    margin-bottom: 15px; 
 }
 
