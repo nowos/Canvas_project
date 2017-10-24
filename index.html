@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Canvas_project</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div class="head">
+                <h1>Load and change your picture</h1>
+            </div>
+            <canvas id="c">
+
+            </canvas>
+
+            <div class="menu">
+                <h1>Menu</h1>
+                <div class="option1"> 
+                </div>
+
+            </div> 
+
+
+            <div class="buttons">
+
+                <img id="i"/>
+
+
+                <button id="load" onclick="myCanvas()">Load</button>
+
+                <input type='file' id='getval' name="background-image" onchange="readURL(event)" />
+
+                <script>
+                    function readURL(event) {
+                        var getImagePath = URL.createObjectURL(event.target.files[0]);
+                        $('#i').css('content', 'url(' + getImagePath + ')');
+                    }
+                </script>
+
+                <script>
+
+                    function myCanvas() {
+                        var c = document.getElementById("c");
+                        var ctx = c.getContext("2d");
+                        var img = document.getElementById("i");
+                        ctx.drawImage(img, 10, 10, 200, 150);
+                    }
+
+
+                </script>
+
+            </div>
+
+        </div> <!--End of Wrapper-->
+
+    </body> 
+</html>
+
+
