@@ -1,87 +1,51 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>Canvas_project</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        </script>
-    </head>
-    <body>
+   <head>
+      <title>Canvas_project</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      </script>
+   </head>
+   <body>
 
-        <div class="wrapper">
-            <div class="head">
-                <h1>Change Vader</h1>
+      <div class="wrapper">
+         <div class="head">
+            <h1>Change Vader</h1>
+         </div>
+         <canvas id="c">
+
+         </canvas>
+
+         <div class="menu">
+            <h1>Menu</h1>
+            <div class="option">
+               <button class="bt_1" onclick="top_text()">set top text</button>
+               <input type="text" id="text1" name="text1" value=""/>
             </div>
-            <canvas id="c">
-
-            </canvas>
-
-            <div class="menu">
-                <h1>Menu</h1>
-                <div class="option">
-                    <button class="bt_1" onclick="top_text()">set top text</button>
-                    <input type="text" id="text1" name="text1" value=""/>
-                </div>
-                <div class="option">
-                    <button class="bt_1" onclick="bottom_text()">set bottom text</button>
-                    <input type="text" id="text2" name="text1" value=""/>
-                </div>
-
-            </div> 
-
-
-            <div class="buttons">
-
-                <div class="label_bg"><p>get new background:</p></div>
-                <input type='file' id='getval' name="background-image" onchange="readURL(event)" />
+            <div class="option">
+               <button class="bt_1" onclick="bottom_text()">set bottom text</button>
+               <input type="text" id="text2" name="text1" value=""/>
             </div>
-                <script>
 
-                    var c = document.getElementById("c");
-                    var ctx = c.getContext("2d");
-
-                    var image = new Image();
-                    image.onload = function () {
-                        console.log("loaded image");
-                        ctx.drawImage(image, 15, 15, c.width - '20', c.height - '30');
-                    };
-
-                    image.src = "vader.ico";
-
-                </script> 
-
-                <script>
-                    var top_text = function () {
-                        ctx.fillStyle = "black";
-                        ctx.font = "italic 18px Arial";
-                        ctx.fillText($('#text1').val(), 50, 20);
-                    };
-                </script>
-
-                <script>
-                    var bottom_text = function () {
-                        ctx.fillStyle = "black";
-                        ctx.font = "italic 18px Arial";
-                        ctx.fillText($('#text2').val(), 50, 140);
-                    };
-                </script>
-
-                <script>
-
-                    function readURL(event) {
-                        var getImagePath = URL.createObjectURL(event.target.files[0]);
-                        $('#c').css('background-image', 'url(' + getImagePath + ')');
-                    }
-
-                </script>
+         </div> 
 
 
-        </div> <!--End of Wrapper-->
+         <div class="menu2">
 
-    </body> 
+            <div class="label"><p>get new background:</p></div>
+            <input type='file' id='getval' name="background-image" onchange="readURL(event)"/>
+            <div class="label"><p>save new Vader:</p></div>
+            <a id="download">Download as image</a>
+
+         </div>
+
+      </div> <!--End of Wrapper-->
+
+      <script src="JS/my_app.js"></script>
+   </body> 
 </html>
 
 
